@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Dawn Patrol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Libre+Baskerville:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #F5F0E8;
+      --parchment:   #EDE6D3;
+      --ink:         #2C1810;
+      --rust:        #C4522A;
+      --terracotta:  #D4714A;
+      --ink-muted:   #5C5650;
+      --placeholder: #9A8B7E;
+      --faded:       #7A6A55;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+
+    /* Header */
+    .site-header {
+      text-align: center;
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--terracotta);
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 16px;
+    }
+
+    .site-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 700;
+      line-height: 0.95;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .site-title em {
+      font-style: italic;
+      color: var(--rust);
+    }
+
+    .page-subtitle {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--ink-muted);
+      margin-top: 20px;
+    }
+
+    .last-updated {
+      font-size: 12px;
+      color: var(--placeholder);
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    ul {
+      list-style: none;
+      margin: 12px 0 18px;
+      padding: 0;
+    }
+
+    ul li {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      color: var(--ink-muted);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      line-height: 1.7;
+      border-bottom: 1px solid rgba(196, 82, 42, 0.1);
+    }
+
+    ul li:last-child {
+      border-bottom: none;
+    }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--terracotta);
+      margin: 48px 0;
+    }
+
+    /* Card style sections */
+    .card {
+      background: var(--parchment);
+      border: 1px solid rgba(196, 82, 42, 0.15);
+      border-radius: 4px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: var(--ink);
+      color: #F5F0E8;
+      border-radius: 4px;
+      padding: 32px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      color: #F5F0E8;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: rgba(245, 240, 232, 0.7);
+      font-size: 14px;
+    }
+
+    .contact-box a {
+      color: var(--terracotta);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(196, 82, 42, 0.2);
+      font-size: 12px;
+      color: var(--placeholder);
+      letter-spacing: 0.05em;
+    }
+
+    footer a {
+      color: var(--rust);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="site-header">
+      <p class="eyebrow">🌅 Dawn Patrol</p>
+      <h1 class="site-title">Privacy<br><em>Policy</em></h1>
+      <p class="page-subtitle">How we handle your data — plainly stated.</p>
+      <p class="last-updated">Last updated: April 5, 2026</p>
+    </header>
+
+    <div class="section">
+      <p class="section-label">Overview</p>
+      <h2>The short version</h2>
+      <p>Dawn Patrol is a surf session journal and AI coaching app. We collect only what we need to make the app work — your session data, your account info, and your home surf spot. We don't sell your data. We don't share it with advertisers. We never will.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-label">What we collect</p>
+      <h2>Information you give us</h2>
+      <ul>
+        <li>Your name and email address when you create an account</li>
+        <li>Your surf session logs — spot, board, duration, vibe, notes, and conditions</li>
+        <li>Your home surf spot (you choose this from a list — we do not track your GPS location)</li>
+        <li>Your board quiver — the boards you add to your profile</li>
+        <li>Any notes or free-text entries you add to sessions</li>
+      </ul>
+
+      <h2 style="margin-top: 32px;">Information collected automatically</h2>
+      <ul>
+        <li>Basic device information (device type, operating system) for crash reporting</li>
+        <li>App usage patterns to improve performance — no personally identifiable data</li>
+        <li>Authentication tokens to keep you logged in securely (stored on your device)</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-label">How we use it</p>
+      <h2>What your data powers</h2>
+
+      <div class="card">
+        <h3>Your AI Coach</h3>
+        <p>Your session logs are used to generate your personalized coaching insights. This data is processed solely to produce your feedback and is never used for advertising or sold to third parties.</p>
+      </div>
+
+      <div class="card">
+        <h3>Surf Conditions</h3>
+        <p>Your home spot is used to fetch real-time surf conditions so you always know what the ocean is doing before you paddle out. Only your spot's location is used — no personal account information is shared.</p>
+      </div>
+
+      <div class="card">
+        <h3>Your Session History</h3>
+        <p>All session data is stored securely under your unique account. Only you can access your own sessions — your data is never visible to other users.</p>
+      </div>
+
+      <div class="card">
+        <h3>Account Authentication</h3>
+        <p>We use industry-standard authentication to manage your account securely. If you sign in with Google, we receive only your name and email. We do not receive or store your password.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-label">Third parties</p>
+      <h2>Who else touches your data</h2>
+      <p>We work with a small number of trusted third-party services to run the app — for authentication, database storage, surf conditions, and AI coaching. We do not sell, rent, or share your personal data with advertisers, data brokers, or any unauthorized third parties.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-label">Your rights</p>
+      <h2>You're in control</h2>
+      <ul>
+        <li>You can delete any session log at any time from within the app</li>
+        <li>You can update your profile information at any time</li>
+        <li>You can delete your account by contacting us at the email below — we'll remove all your data within 30 days</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p class="section-label">Changes</p>
+      <h2>Updates to this policy</h2>
+      <p>If we make material changes to this privacy policy, we'll notify you through the app or by email before the changes take effect. The "last updated" date at the top of this page will always reflect the most recent version.</p>
+    </div>
+
+    <div class="contact-box">
+      <h2>Questions?</h2>
+      <p>We're real people. If you have any questions about your data or this policy, reach out directly.</p>
+      <a href="/cdn-cgi/l/email-protection#3444465d4255574d74445540465b58195055435a1a575b59"><span class="__cf_email__" data-cfemail="9fefedf6e9fefce6dfeffeebedf0f3b2fbfee8f1b1fcf0f2">[email&#160;protected]</span></a>
+    </div>
+
+    <footer>
+      <p>© 2026 Dawn Patrol &nbsp;·&nbsp; <a href="https://patrol-dawn.
