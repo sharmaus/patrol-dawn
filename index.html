@@ -9,310 +9,95 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:          #F5F0E8;
-      --parchment:   #EDE6D3;
-      --ink:         #2C1810;
-      --rust:        #C4522A;
-      --terracotta:  #D4714A;
-      --ink-muted:   #5C5650;
-      --placeholder: #9A8B7E;
+      --bg: #F5F0E8; --parchment: #EDE6D3; --ink: #2C1810;
+      --rust: #C4522A; --terracotta: #D4714A; --ink-muted: #5C5650; --placeholder: #9A8B7E;
     }
-
-    html, body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ── Grain overlay ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 100;
-    }
-
-    /* ── Sun horizon decoration ── */
-    .sun-bg {
-      position: fixed;
-      bottom: -180px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,113,74,0.18) 0%, rgba(196,82,42,0.06) 50%, transparent 72%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ── Layout ── */
-    .page {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 24px 80px;
-      text-align: center;
-    }
-
-    /* ── Eyebrow ── */
-    .eyebrow {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards 0.1s;
-    }
-
-    /* ── Headline ── */
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(72px, 13vw, 148px);
-      font-weight: 900;
-      line-height: 0.92;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.25s;
-    }
-
-    h1 em {
-      font-style: italic;
-      color: var(--rust);
-    }
-
-    /* ── Tagline ── */
-    .tagline {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      font-style: italic;
-      font-size: clamp(18px, 3vw, 26px);
-      color: var(--ink-muted);
-      margin-bottom: 52px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.4s;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      width: 48px;
-      height: 1px;
-      background: var(--terracotta);
-      margin: 0 auto 44px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.55s;
-    }
-
-    /* ── Features ── */
-    .features {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 56px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.65s;
-    }
-
-    .feature {
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--ink-muted);
-      letter-spacing: 0.01em;
-    }
-
-    .feature span {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    /* ── Form ── */
-    .form-label {
-      font-family: 'Libre Baskerville', serif;
-      font-style: italic;
-      font-size: 14px;
-      color: var(--placeholder);
-      margin-bottom: 14px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.8s;
-    }
-
-    .form-wrap {
-      display: flex;
-      gap: 0;
-      max-width: 420px;
-      width: 100%;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 2px 24px rgba(44,24,16,0.1);
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards 0.9s;
-    }
-
-    .form-wrap input {
-      flex: 1;
-      padding: 16px 20px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      background: var(--parchment);
-      border: none;
-      outline: none;
-      color: var(--ink);
-    }
-
-    .form-wrap input::placeholder {
-      color: var(--placeholder);
-    }
-
-    .form-wrap button {
-      padding: 16px 24px;
-      background: var(--rust);
-      color: #fff;
-      border: none;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .form-wrap button:hover {
-      background: var(--terracotta);
-    }
-
-    .success-msg {
-      display: none;
-      font-family: 'Libre Baskerville', serif;
-      font-style: italic;
-      font-size: 16px;
-      color: var(--rust);
-      margin-top: 16px;
-    }
-
-    /* ── Footer ── */
-    footer {
-      position: fixed;
-      bottom: 28px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 12px;
-      color: var(--placeholder);
-      letter-spacing: 0.05em;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 1.1s;
-    }
-
-    /* ── Wave decoration ── */
-    .wave-row {
-      display: flex;
-      gap: 6px;
-      margin-top: 48px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 1s;
-    }
-
-    .wave-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--terracotta);
-      opacity: 0.4;
-    }
+    html, body { height: 100%; background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.04; pointer-events: none; z-index: 100; }
+    .sun-bg { position: fixed; bottom: -180px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(212,113,74,0.18) 0%, rgba(196,82,42,0.06) 50%, transparent 72%); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 24px 80px; text-align: center; }
+    .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.7s ease forwards 0.1s; }
+    h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(72px, 13vw, 148px); font-weight: 900; line-height: 0.92; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.25s; }
+    h1 em { font-style: italic; color: var(--rust); }
+    .tagline { font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; font-size: clamp(18px, 3vw, 26px); color: var(--ink-muted); margin-bottom: 52px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+    .divider { width: 48px; height: 1px; background: var(--terracotta); margin: 0 auto 44px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.55s; }
+    .features { display: flex; flex-direction: column; gap: 14px; margin-bottom: 56px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.65s; }
+    .feature { font-size: 16px; font-weight: 300; color: var(--ink-muted); letter-spacing: 0.01em; }
+    .feature span { color: var(--ink); font-weight: 500; }
+    .form-label { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 14px; color: var(--placeholder); margin-bottom: 14px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.8s; }
+    .form-wrap { display: flex; max-width: 420px; width: 100%; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 24px rgba(44,24,16,0.1); opacity: 0; animation: fadeUp 0.7s ease forwards 0.9s; }
+    .form-wrap input { flex: 1; padding: 16px 20px; font-family: 'DM Sans', sans-serif; font-size: 15px; background: var(--parchment); border: none; outline: none; color: var(--ink); }
+    .form-wrap input::placeholder { color: var(--placeholder); }
+    .form-wrap button { padding: 16px 24px; background: var(--rust); color: #fff; border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease; white-space: nowrap; }
+    .form-wrap button:hover { background: var(--terracotta); }
+    .success-msg { display: none; font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 16px; color: var(--rust); margin-top: 16px; }
+    footer { position: fixed; bottom: 28px; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--placeholder); letter-spacing: 0.05em; opacity: 0; animation: fadeUp 0.6s ease forwards 1.1s; }
+    .wave-row { display: flex; gap: 6px; margin-top: 48px; opacity: 0; animation: fadeUp 0.6s ease forwards 1s; }
+    .wave-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta); opacity: 0.4; }
     .wave-dot:nth-child(2) { opacity: 0.6; }
     .wave-dot:nth-child(3) { opacity: 1; }
     .wave-dot:nth-child(4) { opacity: 0.6; }
     .wave-dot:nth-child(5) { opacity: 0.4; }
-
-    /* ── Animations ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── Mobile ── */
-    @media (max-width: 500px) {
-      .form-wrap { flex-direction: column; border-radius: 8px; }
-      .form-wrap input { border-radius: 8px 8px 0 0; }
-      .form-wrap button { border-radius: 0 0 8px 8px; padding: 16px; }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 500px) { .form-wrap { flex-direction: column; border-radius: 8px; } .form-wrap input { border-radius: 8px 8px 0 0; } .form-wrap button { border-radius: 0 0 8px 8px; padding: 16px; } }
   </style>
 </head>
 <body>
-
   <div class="sun-bg"></div>
-
   <main class="page">
     <p class="eyebrow">🌅 Coming Soon to the App Store</p>
-
     <h1>Dawn<br><em>Patrol</em></h1>
-
     <p class="tagline">Surf smarter.</p>
-
     <div class="divider"></div>
-
     <div class="features">
       <p class="feature">🌊 <span>Log every session</span> in 60 seconds</p>
       <p class="feature">🤖 <span>AI coaching</span> after every week</p>
       <p class="feature">📈 <span>Track your progression</span> over time</p>
     </div>
-
-    <p class="form-label">Be first in the water.</p>
-
-    <div class="form-wrap">
+    <p class="form-label" id="form-label">Be first in the water.</p>
+    <div class="form-wrap" id="form-wrap">
       <input type="email" id="email-input" placeholder="your@email.com" />
       <button onclick="handleSubmit()">Join Waitlist</button>
     </div>
-
     <p class="success-msg" id="success">You're on the list. See you at dawn. 🤙</p>
-
     <div class="wave-row">
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
+      <div class="wave-dot"></div><div class="wave-dot"></div><div class="wave-dot"></div>
+      <div class="wave-dot"></div><div class="wave-dot"></div>
     </div>
   </main>
-
   <footer>Built by surfers, for surfers. 🤙</footer>
-
+  <iframe name="hidden-form" style="display:none;"></iframe>
   <script>
+    const FORM_ACTION = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfdUgAJ6g0ExEJSqIHwbs9zSZm_RRNHoJ5sTpEfWH_C00oJAA/formResponse";
+    const ENTRY_ID = "entry.1475331173";
     function handleSubmit() {
       const input = document.getElementById('email-input');
-      const success = document.getElementById('success');
       const email = input.value.trim();
       if (!email || !email.includes('@')) {
         input.style.outline = '2px solid #C4522A';
         setTimeout(() => input.style.outline = 'none', 1200);
         return;
       }
-      document.querySelector('.form-wrap').style.display = 'none';
-      document.querySelector('.form-label').style.display = 'none';
-      success.style.display = 'block';
+      const form = document.createElement('form');
+      form.action = FORM_ACTION;
+      form.method = 'POST';
+      form.target = 'hidden-form';
+      const entry = document.createElement('input');
+      entry.type = 'hidden';
+      entry.name = ENTRY_ID;
+      entry.value = email;
+      form.appendChild(entry);
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('form-label').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
     }
-
     document.getElementById('email-input').addEventListener('keydown', e => {
       if (e.key === 'Enter') handleSubmit();
     });
   </script>
-
 </body>
 </html>
