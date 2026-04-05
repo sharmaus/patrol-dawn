@@ -210,27 +210,6 @@
       animation: fadeUp 0.6s ease forwards 1.1s;
     }
  
-    .wave-row {
-      display: flex;
-      gap: 6px;
-      margin-top: 48px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 1s;
-    }
- 
-    .wave-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--terracotta);
-      opacity: 0.4;
-    }
- 
-    .wave-dot:nth-child(2) { opacity: 0.6; }
-    .wave-dot:nth-child(3) { opacity: 1; }
-    .wave-dot:nth-child(4) { opacity: 0.6; }
-    .wave-dot:nth-child(5) { opacity: 0.4; }
- 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -270,19 +249,6 @@
     </div>
  
     <p class="success-msg" id="success">You're on the list. See you at dawn. 🤙</p>
- 
-    <div class="wave-row">
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-    </div>
   </main>
  
   <footer>Built by surfers, for surfers. 🤙</footer>
