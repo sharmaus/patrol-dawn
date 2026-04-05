@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Libre+Baskerville:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --bg:          #F5F0E8;
       --parchment:   #EDE6D3;
@@ -20,14 +20,14 @@
       --placeholder: #9A8B7E;
       --faded:       #7A6A55;
     }
-
+ 
     html, body {
       background: var(--bg);
       color: var(--ink);
       font-family: 'DM Sans', sans-serif;
       line-height: 1.7;
     }
-
+ 
     body::before {
       content: '';
       position: fixed;
@@ -37,7 +37,7 @@
       pointer-events: none;
       z-index: 0;
     }
-
+ 
     .wrapper {
       position: relative;
       z-index: 1;
@@ -45,7 +45,7 @@
       margin: 0 auto;
       padding: 80px 24px 120px;
     }
-
+ 
     /* Header */
     .site-header {
       text-align: center;
@@ -53,7 +53,7 @@
       padding-bottom: 40px;
       border-bottom: 1px solid var(--terracotta);
     }
-
+ 
     .eyebrow {
       font-family: 'DM Sans', sans-serif;
       font-size: 10px;
@@ -63,7 +63,7 @@
       color: var(--rust);
       margin-bottom: 16px;
     }
-
+ 
     .site-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(48px, 8vw, 80px);
@@ -72,12 +72,12 @@
       color: var(--ink);
       margin-bottom: 12px;
     }
-
+ 
     .site-title em {
       font-style: italic;
       color: var(--rust);
     }
-
+ 
     .page-subtitle {
       font-family: 'Libre Baskerville', serif;
       font-style: italic;
@@ -85,19 +85,19 @@
       color: var(--ink-muted);
       margin-top: 20px;
     }
-
+ 
     .last-updated {
       font-size: 12px;
       color: var(--placeholder);
       letter-spacing: 0.05em;
       margin-top: 8px;
     }
-
+ 
     /* Sections */
     .section {
       margin-bottom: 48px;
     }
-
+ 
     .section-label {
       font-family: 'DM Sans', sans-serif;
       font-size: 10px;
@@ -107,7 +107,7 @@
       color: var(--rust);
       margin-bottom: 8px;
     }
-
+ 
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 26px;
@@ -116,7 +116,7 @@
       margin-bottom: 16px;
       line-height: 1.2;
     }
-
+ 
     p {
       font-family: 'Libre Baskerville', serif;
       font-size: 15px;
@@ -124,13 +124,13 @@
       margin-bottom: 14px;
       line-height: 1.8;
     }
-
+ 
     ul {
       list-style: none;
       margin: 12px 0 18px;
       padding: 0;
     }
-
+ 
     ul li {
       font-family: 'Libre Baskerville', serif;
       font-size: 15px;
@@ -140,11 +140,11 @@
       line-height: 1.7;
       border-bottom: 1px solid rgba(196, 82, 42, 0.1);
     }
-
+ 
     ul li:last-child {
       border-bottom: none;
     }
-
+ 
     ul li::before {
       content: '—';
       position: absolute;
@@ -152,14 +152,14 @@
       color: var(--terracotta);
       font-family: 'DM Sans', sans-serif;
     }
-
+ 
     .divider {
       width: 48px;
       height: 1px;
       background: var(--terracotta);
       margin: 48px 0;
     }
-
+ 
     /* Card style sections */
     .card {
       background: var(--parchment);
@@ -168,7 +168,7 @@
       padding: 28px 32px;
       margin-bottom: 20px;
     }
-
+ 
     .card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
@@ -176,12 +176,12 @@
       color: var(--ink);
       margin-bottom: 10px;
     }
-
+ 
     .card p {
       margin-bottom: 0;
       font-size: 14px;
     }
-
+ 
     /* Contact */
     .contact-box {
       background: var(--ink);
@@ -191,17 +191,17 @@
       margin-top: 48px;
       text-align: center;
     }
-
+ 
     .contact-box h2 {
       color: #F5F0E8;
       margin-bottom: 10px;
     }
-
+ 
     .contact-box p {
       color: rgba(245, 240, 232, 0.7);
       font-size: 14px;
     }
-
+ 
     .contact-box a {
       color: var(--terracotta);
       text-decoration: none;
@@ -211,7 +211,7 @@
       display: inline-block;
       margin-top: 12px;
     }
-
+ 
     /* Footer */
     footer {
       text-align: center;
@@ -222,7 +222,7 @@
       color: var(--placeholder);
       letter-spacing: 0.05em;
     }
-
+ 
     footer a {
       color: var(--rust);
       text-decoration: none;
@@ -231,22 +231,22 @@
 </head>
 <body>
   <div class="wrapper">
-
+ 
     <header class="site-header">
       <p class="eyebrow">🌅 Dawn Patrol</p>
       <h1 class="site-title">Privacy<br><em>Policy</em></h1>
       <p class="page-subtitle">How we handle your data — plainly stated.</p>
       <p class="last-updated">Last updated: April 5, 2026</p>
     </header>
-
+ 
     <div class="section">
       <p class="section-label">Overview</p>
       <h2>The short version</h2>
       <p>Dawn Patrol is a surf session journal and AI coaching app. We collect only what we need to make the app work — your session data, your account info, and your home surf spot. We don't sell your data. We don't share it with advertisers. We never will.</p>
     </div>
-
+ 
     <div class="divider"></div>
-
+ 
     <div class="section">
       <p class="section-label">What we collect</p>
       <h2>Information you give us</h2>
@@ -257,7 +257,7 @@
         <li>Your board quiver — the boards you add to your profile</li>
         <li>Any notes or free-text entries you add to sessions</li>
       </ul>
-
+ 
       <h2 style="margin-top: 32px;">Information collected automatically</h2>
       <ul>
         <li>Basic device information (device type, operating system) for crash reporting</li>
@@ -265,44 +265,44 @@
         <li>Authentication tokens to keep you logged in securely (stored on your device)</li>
       </ul>
     </div>
-
+ 
     <div class="divider"></div>
-
+ 
     <div class="section">
       <p class="section-label">How we use it</p>
       <h2>What your data powers</h2>
-
+ 
       <div class="card">
         <h3>Your AI Coach</h3>
         <p>Your session logs are used to generate your personalized coaching insights. This data is processed solely to produce your feedback and is never used for advertising or sold to third parties.</p>
       </div>
-
+ 
       <div class="card">
         <h3>Surf Conditions</h3>
         <p>Your home spot is used to fetch real-time surf conditions so you always know what the ocean is doing before you paddle out. Only your spot's location is used — no personal account information is shared.</p>
       </div>
-
+ 
       <div class="card">
         <h3>Your Session History</h3>
         <p>All session data is stored securely under your unique account. Only you can access your own sessions — your data is never visible to other users.</p>
       </div>
-
+ 
       <div class="card">
         <h3>Account Authentication</h3>
         <p>We use industry-standard authentication to manage your account securely. If you sign in with Google, we receive only your name and email. We do not receive or store your password.</p>
       </div>
     </div>
-
+ 
     <div class="divider"></div>
-
+ 
     <div class="section">
       <p class="section-label">Third parties</p>
       <h2>Who else touches your data</h2>
       <p>We work with a small number of trusted third-party services to run the app — for authentication, database storage, surf conditions, and AI coaching. We do not sell, rent, or share your personal data with advertisers, data brokers, or any unauthorized third parties.</p>
     </div>
-
+ 
     <div class="divider"></div>
-
+ 
     <div class="section">
       <p class="section-label">Your rights</p>
       <h2>You're in control</h2>
@@ -312,20 +312,91 @@
         <li>You can delete your account by contacting us at the email below — we'll remove all your data within 30 days</li>
       </ul>
     </div>
-
+ 
     <div class="divider"></div>
-
+ 
     <div class="section">
       <p class="section-label">Changes</p>
       <h2>Updates to this policy</h2>
       <p>If we make material changes to this privacy policy, we'll notify you through the app or by email before the changes take effect. The "last updated" date at the top of this page will always reflect the most recent version.</p>
     </div>
-
+ 
     <div class="contact-box">
       <h2>Questions?</h2>
       <p>We're real people. If you have any questions about your data or this policy, reach out directly.</p>
-      <a href="/cdn-cgi/l/email-protection#3444465d4255574d74445540465b58195055435a1a575b59"><span class="__cf_email__" data-cfemail="9fefedf6e9fefce6dfeffeebedf0f3b2fbfee8f1b1fcf0f2">[email&#160;protected]</span></a>
+      <a href="#" onclick="openModal(); return false;">Send us a message</a>
     </div>
-
+ 
+    <!-- Contact Modal -->
+    <div id="contact-modal" style="display:none; position:fixed; inset:0; background:rgba(44,24,16,0.6); z-index:999; align-items:center; justify-content:center;">
+      <div style="background:var(--bg); max-width:480px; width:90%; border-radius:6px; padding:40px 36px; position:relative; box-shadow:0 8px 48px rgba(44,24,16,0.25);">
+        <button onclick="closeModal()" style="position:absolute; top:16px; right:20px; background:none; border:none; font-size:20px; color:var(--ink-muted); cursor:pointer;">✕</button>
+        <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--rust); margin-bottom:10px;">Get in touch</p>
+        <h2 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:24px; color:var(--ink);">Send us a message</h2>
+ 
+        <label style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-muted); display:block; margin-bottom:6px;">Your Email</label>
+        <input id="contact-email" type="email" placeholder="your@email.com" style="width:100%; padding:14px 16px; background:var(--parchment); border:1px solid rgba(196,82,42,0.2); border-radius:4px; font-family:'DM Sans',sans-serif; font-size:15px; color:var(--ink); outline:none; margin-bottom:18px;" />
+ 
+        <label style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-muted); display:block; margin-bottom:6px;">Message</label>
+        <textarea id="contact-message" placeholder="What's on your mind?" rows="5" style="width:100%; padding:14px 16px; background:var(--parchment); border:1px solid rgba(196,82,42,0.2); border-radius:4px; font-family:'DM Sans',sans-serif; font-size:15px; color:var(--ink); outline:none; resize:vertical; margin-bottom:24px;"></textarea>
+ 
+        <button onclick="submitContact()" id="contact-btn" style="width:100%; padding:16px; background:var(--ink); color:var(--bg); border:none; border-radius:4px; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer;">Send Message</button>
+        <p id="contact-success" style="display:none; font-family:'Libre Baskerville',serif; font-style:italic; color:var(--rust); text-align:center; margin-top:16px;">Message sent. We'll be in touch. 🤙</p>
+      </div>
+    </div>
+ 
+    <script>
+      const CONTACT_URL = "https://script.google.com/macros/s/AKfycbwrPoUR8I2PyZycbgYurtYqdECo2g8YzfLkUrq4Dvk1MOuQsE0pfwSNGXuw3K4i48bj/exec";
+ 
+      function openModal() {
+        const modal = document.getElementById('contact-modal');
+        modal.style.display = 'flex';
+      }
+ 
+      function closeModal() {
+        document.getElementById('contact-modal').style.display = 'none';
+        document.getElementById('contact-success').style.display = 'none';
+        document.getElementById('contact-email').value = '';
+        document.getElementById('contact-message').value = '';
+        document.getElementById('contact-btn').textContent = 'Send Message';
+      }
+ 
+      function submitContact() {
+        const email = document.getElementById('contact-email').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+        const btn = document.getElementById('contact-btn');
+ 
+        if (!email || !email.includes('@')) {
+          document.getElementById('contact-email').style.border = '1px solid #C4522A';
+          return;
+        }
+        if (!message) {
+          document.getElementById('contact-message').style.border = '1px solid #C4522A';
+          return;
+        }
+ 
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+ 
+        fetch(CONTACT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message)
+        }).then(() => {
+          btn.style.display = 'none';
+          document.getElementById('contact-success').style.display = 'block';
+        }).catch(() => {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+        });
+      }
+ 
+      // Close modal on backdrop click
+      document.getElementById('contact-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+ 
     <footer>
       <p>© 2026 Dawn Patrol &nbsp;·&nbsp; <a href="https://patrol-dawn.
